@@ -1,0 +1,2 @@
+bev_pkg
+-DCATKIN_DEVEL_PREFIX=/home/hmcl/carla-birdeye-view/bev_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hmcl/carla-birdeye-view/bev_ws/install -G Unix Makefiles

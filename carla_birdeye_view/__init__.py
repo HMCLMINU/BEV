@@ -1,3 +1,15 @@
+import glob
+import os
+import sys
+
+try:
+    sys.path.append(glob.glob('/home/hmcl/carla10/PythonAPI/carla/dist/carla-*%d.%d-%s.egg' % (
+        sys.version_info.major,
+        sys.version_info.minor,
+        'win-amd64' if os.name == 'nt' else 'linux-x86_64'))[0])
+except IndexError:
+    pass
+
 import carla
 import logging
 import numpy as np
@@ -8,10 +20,11 @@ from pathlib import Path
 from typing import List
 from filelock import FileLock
 
-from carla_birdeye_view import actors, cache
-from carla_birdeye_view.actors import SegregatedActors
-from carla_birdeye_view.colors import RGB
-from carla_birdeye_view.mask import (
+import actors, cache
+from actors import SegregatedActors
+from colors import RGB
+import mask
+from mask import (
     PixelDimensions,
     Coord,
     CroppingRect,
@@ -115,7 +128,6 @@ def square_fitting_rect_at_any_rotation(rect_size: Dimensions) -> float:
 
 class BirdViewProducer:
     """Responsible for producing top-down view on the map, following agent's vehicle.
-
     About BirdView:
     - top-down view, fixed directly above the agent (including vehicle rotation), cropped to desired size
     - consists of stacked layers (masks), each filled with ones and zeros (depends on MaskMaskGenerator implementation).

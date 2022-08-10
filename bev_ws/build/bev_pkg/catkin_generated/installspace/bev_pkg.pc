@@ -1,0 +1,8 @@
+prefix=/home/hmcl/carla-birdeye-view/bev_ws/install
+
+Name: bev_pkg
+Description: Description of bev_pkg
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lbev_pkg -lopencv
+Requires: roscpp rospy std_msgs message_runtime cv_bridge image_transport sensor_msgs
