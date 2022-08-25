@@ -316,9 +316,9 @@ class BirdViewProducer:
         masks[BirdViewMasks.PEDESTRIANS.value] = self.masks_generator.pedestrians_mask(
             segregated_actors.pedestrians
         )
-        # masks[BirdViewMasks.EGOTRAJECTORY.value] = self.masks_generator.ego_trajectory_mask(
-        #     agent_vehicle, trajectory_arr
-        # )
+        masks[BirdViewMasks.EGOTRAJECTORY.value] = self.masks_generator.ego_trajectory_mask(
+            agent_vehicle, trajectory_arr
+        )
         # masks[BirdViewMasks.EGOPASTTRAJECTORY.value] = self.masks_generator.ego_past_trajectory_mask(
         #     agent_vehicle, trajectory_arr
         # )

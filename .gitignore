@@ -3,3 +3,7 @@
 *.iml
 *.xml
 *.png
+bev_datagen/carla-birdeye-view/autodata/
+bev_datagen/carla-birdeye-view/__pycache__/
+bev_datagen/carla-birdeye-view/birdview_v3_cache/
+birdview_v3_cache/
